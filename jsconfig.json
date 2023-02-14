@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "esnext",
+    "baseUrl": "./",
+    "moduleResolution": "node",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "plugins": [
+      {
+        "name": "@styled/typescript-styled-plugin",
+        "tags": ["styled", "css", "sty"]
+      }
+    ],
+    "jsx": "preserve",
+    "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
+  }
+}
