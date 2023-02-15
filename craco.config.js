@@ -31,13 +31,9 @@ module.exports = {
         uglifyOptions: {
           warnings: false,
           compress: {
-            // 移除 debugger
-            drop_debugger: true,
-            // 移除console.*函数
-            drop_console: true,
-            // 移除console.log的引用
-            // 例如 log = console.log, 移除log，同时移除console.log
-            pure_funcs: ['console.log']
+            drop_debugger: true, //是否清除debugger
+            drop_console: false, // 若为true则移除console.*函数且移除console.log的引用 --- 例如 log = console.log, 移除log，同时移除console.log
+            pure_funcs: ['console.log', 'console.info', 'console.warn', 'console.debug'] //drop_console 设置false,需要特殊清除的
           }
         },
         // 多进程并行运行

@@ -104,7 +104,7 @@ Jenkins本身是依赖Java的，所以我们需要先安装Java环境：
 dnf search java-1.8
 
 dnf install java-1.8.0-openjdk.x86_64
-建议用最新的这个---》dnf install java-17-openjdk
+建议用最新的这个(因为我们的jenkins是最新的)---》dnf install java-17-openjdk
 ```
 
 #### 3.1.2. 安装Jenkins
@@ -165,12 +165,15 @@ Jenkins默认使用8080端口提供服务，所以需要加入到安全组中：
 
 之后需要重启一下Jenkins：
 
+若不行使用下面的这个
+
 ```shell
 # 也可以将Jenkins添加到root组中
 sudo usermod -a -G root jenkins
 
+若上面两个不行也可以使用这个
 # 也可以给Jenkins目录权限
-chown -R jenkins  /xxx/xxx 
+chown -R jenkins  /xxx/xxx
 
 systemctl restart jenkins
 ```
@@ -272,7 +275,7 @@ pwd
 node -v
 npm -v
 
-npm install 
+npm install
 npm run build
 
 pwd
@@ -282,7 +285,7 @@ echo '构建成功'
 ls
 
 # 删除/root/mall_cms文件夹里所有的内容
-rm -rf /root/mall_cms/* 
+rm -rf /root/mall_cms/*
 
 cp -rf ./dist/* /root/mall_cms/
 ```
