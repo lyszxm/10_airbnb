@@ -155,7 +155,7 @@ Jenkins默认使用8080端口提供服务，所以需要加入到安全组中：
 
 ![image-20201204173117359](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a2c23f06e6b14427878a3eecf74e2acf~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp)
 
-#### 3.1.3. Jenkins用户
+#### 3.1.3. Jenkins用户(构建失败的某些原因解决方案)
 
 我们后面会访问centos中的某些文件夹，默认Jenkins使用的用户是 `jenkins`，可能会没有访问权限，所以我们需要修改一下它的用户：
 
@@ -165,15 +165,16 @@ Jenkins默认使用8080端口提供服务，所以需要加入到安全组中：
 
 之后需要重启一下Jenkins：
 
-若不行使用下面的这个
+* 若不行使用下面的这个
 
 ```shell
 # 也可以将Jenkins添加到root组中
 sudo usermod -a -G root jenkins
 
-若上面两个不行也可以使用这个
+# 若上面两个不行也可以使用这个
 # 也可以给Jenkins目录权限
 chown -R jenkins  /xxx/xxx
+或 sudo chown -R jenkins  /xxx/xxx
 
 systemctl restart jenkins
 ```
