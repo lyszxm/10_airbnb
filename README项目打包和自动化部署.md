@@ -308,7 +308,8 @@ dnf install nginx
 ```shell
 systemctl start nginx
 systemctl status nginx
-systemctl enable nginx
+systemctl enable nginx  # 服务器开机nginx随着启动 这个是会创建软链接的
+systemctl disable ******  # 撤销就用这个
 ```
 
 #### 3.2.2. 配置nginx
